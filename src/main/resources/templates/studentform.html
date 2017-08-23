@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"-->
+          <!--integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
 </head>
 <body>
+
+<div class="container" align="center">
+    <div class="jumbotron">
+        <img src="img/bd1.jpg" class="img-rounded" width="900" height="300" alig="center"/>
+        <h1 align="center"><b>Welcome to the student database!</b></h1>
+    </div>
+</div>
+
+<div class="container" align="center">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Home</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/add">Add Student Info</a></li>
+                <li><a href="/displayall">Display All</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container" align="center">
 <form th:action="@{/process}" th:object="${student}" method="post">
     <p>First Name :<input type="text" th:field="*{firstName}" /></p>
     <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br />
@@ -20,9 +53,17 @@
     <p>School :<input type="text" th:field="*{school}" /></p>
     <span th:if="${#fields.hasErrors('school')}" th:errors="*{school}"></span><br />
 
-    <br />
+    <br/>
 
     <input type="submit" value="Submit" />
 </form>
+</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
