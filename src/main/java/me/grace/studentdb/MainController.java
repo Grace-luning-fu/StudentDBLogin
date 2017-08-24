@@ -30,6 +30,7 @@ public class MainController {
 
     @GetMapping("/add")
     public String studentForm(Model model){
+
         model.addAttribute("student", new Student());
         return "studentform";
     }

@@ -14,8 +14,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
+                .antMatchers("/css/**","/img/**", "/js/**", "/fonts/**").permitAll()
                 .anyRequest().authenticated()
-                .antMatchers("/", "/css/**","/img/**", "/js/**", "/fonts/**").permitAll()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
                 .and()
@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 withUser("user").password("password").roles("USER")
 
                 //to add another user, delete ";" from the above command and add
-                .and().withUser("dave").password("begreat").roles("Teacher");
+                .and().withUser("dave").password("begreat").roles("TEACHER");
 
     }
 
